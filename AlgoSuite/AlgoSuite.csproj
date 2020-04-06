@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A49EAD76-5002-4981-BABB-66696A0DD5A8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlgoSuite</RootNamespace>
+    <AssemblyName>AlgoSuite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="02_Graph\Graph.cs" />
+    <Compile Include="01_Array_Strings\GroupAnagramsC.cs" />
+    <Compile Include="01_Array_Strings\LongestPlaindrome.cs" />
+    <Compile Include="04_LinkedList\LinkedListCycle.cs" />
+    <Compile Include="04_LinkedList\AddTwoNumbersC.cs" />
+    <Compile Include="04_LinkedList\AddTwoNumbersII.cs" />
+    <Compile Include="04_LinkedList\IntersectionofTwoLinkedLists.cs" />
+    <Compile Include="04_LinkedList\MergekSortedLists.cs" />
+    <Compile Include="04_LinkedList\MergeTwoSortedLists.cs" />
+    <Compile Include="04_LinkedList\PalindromeLinkedList.cs" />
+    <Compile Include="05_Sorting_Searching\MedianTwoSortedArray.cs" />
+    <Compile Include="05_Sorting_Searching\MergeSortedArray.cs" />
+    <Compile Include="50_OA_Microsoft\NumbersWithEqualDigitSum.cs" />
+    <Compile Include="05_Sorting_Searching\General\CountingInversions.cs" />
+    <Compile Include="05_Sorting_Searching\BinarySearch.cs" />
+    <Compile Include="05_Sorting_Searching\FindMinimuminRotatedSortedArray.cs" />
+    <Compile Include="06_Backtracking\LetterCombinationsofaPhoneNumber.cs" />
+    <Compile Include="02_Graph\01_DFS\NumberofIslands.cs" />
+    <Compile Include="07_Tree\BinaryTreeInorderTraversal.cs" />
+    <Compile Include="07_Tree\BinaryTreeLevelOrderTraversal.cs" />
+    <Compile Include="07_Tree\BinaryTreeZigzagLevelOrderTraversal.cs" />
+    <Compile Include="02_Graph\DeepCloneGraph.cs" />
+    <Compile Include="07_Tree\PopulatingNextRightPointers.cs" />
+    <Compile Include="50_OA_Microsoft\DayofWeek_OA.cs" />
+    <Compile Include="50_OA_Microsoft\IdenticalConsecutiveLetters.cs" />
+    <Compile Include="50_OA_Microsoft\LargestInteger_OA.cs" />
+    <Compile Include="50_OA_Microsoft\LCA_BST.cs" />
+    <Compile Include="50_OA_Microsoft\LongestSubs.cs" />
+    <Compile Include="50_OA_Microsoft\LexicographicallySmallestStr.cs" />
+    <Compile Include="50_OA_Microsoft\LongestSemiAlternating.cs" />
+    <Compile Include="50_OA_Microsoft\MaxInsertsStringWithoutthreea.cs" />
+    <Compile Include="50_OA_Microsoft\MaxPossibleValue.cs" />
+    <Compile Include="50_OA_Microsoft\MeetingRoomII.cs" />
+    <Compile Include="50_OA_Microsoft\MinDeletionAB_OA.cs" />
+    <Compile Include="50_OA_Microsoft\MinDeletions.cs" />
+    <Compile Include="50_OA_Microsoft\MinStepsEqualPiles.cs" />
+    <Compile Include="50_OA_Microsoft\MinSwapWR_OA.cs" />
+    <Compile Include="50_OA_Microsoft\ParticleVelocity.cs" />
+    <Compile Include="04_LinkedList\CopyRandomLS.cs" />
+    <Compile Include="05_Sorting_Searching\CountSmallerAfterSelf.cs" />
+    <Compile Include="07_Tree\BTMaximumPathSum.cs" />
+    <Compile Include="07_Tree\DiameterBT.cs" />
+    <Compile Include="999_UnorganizedPbs\AntiDiagnoal.cs" />
+    <Compile Include="999_UnorganizedPbs\BackspaceCompare.cs" />
+    <Compile Include="999_UnorganizedPbs\BestTimeBuySell.cs" />
+    <Compile Include="999_UnorganizedPbs\CountCompleteTreeNodes.cs" />
+    <Compile Include="999_UnorganizedPbs\DecodeString.cs" />
+    <Compile Include="999_UnorganizedPbs\DistributeCandies2.cs" />
+    <Compile Include="999_UnorganizedPbs\Fibonnacci.cs" />
+    <Compile Include="BestTimetoBuyandSell.cs" />
+    <Compile Include="CandyDist.cs" />
+    <Compile Include="Google_Phonescreening\FindMedianDataStream.cs" />
+    <Compile Include="05_Sorting_Searching\FirstLastPos.cs" />
+    <Compile Include="Google_Phonescreening\FruitIntoBaskets.cs" />
+    <Compile Include="05_Sorting_Searching\InsertIntervals.cs" />
+    <Compile Include="Google_Phonescreening\IsAnagram.cs" />
+    <Compile Include="05_Sorting_Searching\MergeIntervals.cs" />
+    <Compile Include="999_UnorganizedPbs\HotelBookingsPossible.cs" />
+    <Compile Include="999_UnorganizedPbs\ImplementTrie.cs" />
+    <Compile Include="999_UnorganizedPbs\LargestNum.cs" />
+    <Compile Include="999_UnorganizedPbs\LengthofLongestSubseq.cs" />
+    <Compile Include="999_UnorganizedPbs\LongestArithmeticSequence.cs" />
+    <Compile Include="999_UnorganizedPbs\LongestIncreasingSubseq.cs" />
+    <Compile Include="999_UnorganizedPbs\LRUCache.cs" />
+    <Compile Include="999_UnorganizedPbs\MajorityElementC.cs" />
+    <Compile Include="999_UnorganizedPbs\MaxGap.cs" />
+    <Compile Include="999_UnorganizedPbs\MaximumProduct.cs" />
+    <Compile Include="999_UnorganizedPbs\MaxSubArray.cs" />
+    <Compile Include="999_UnorganizedPbs\MaxSumContiguousSubarray.cs" />
+    <Compile Include="999_UnorganizedPbs\MinHeap.cs" />
+    <Compile Include="999_UnorganizedPbs\MinStack.cs" />
+    <Compile Include="01_Array_Strings\MoveZeros.cs" />
+    <Compile Include="999_UnorganizedPbs\NearestSmaller.cs" />
+    <Compile Include="999_UnorganizedPbs\NextPermutation.cs" />
+    <Compile Include="Others\NumUniqueEmailsC.cs" />
+    <Compile Include="05_Sorting_Searching\PeakIndexInMountainC.cs" />
+    <Compile Include="Others\PowerReminder.cs" />
+    <Compile Include="Google_Phonescreening\ProductLastKNumbers.cs" />
+    <Compile Include="999_UnorganizedPbs\PlusOneArray.cs" />
+    <Compile Include="01_Array_Strings\PivotSumIndex.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Others\Robber_part1.cs" />
+    <Compile Include="01_Array_Strings\ReverseWordsinString.cs" />
+    <Compile Include="01_Array_Strings\ReplaceEmptySpace.cs" />
+    <Compile Include="01_Array_Strings\ReverseString.cs" />
+    <Compile Include="01_Array_Strings\ReverseWordsInStrings.cs" />
+    <Compile Include="01_Array_Strings\RotateImageC.cs" />
+    <Compile Include="01_Array_Strings\RotateStringC.cs" />
+    <Compile Include="01_Array_Strings\SetMatrixZeroes.cs" />
+    <Compile Include="01_Array_Strings\SpiralMatrixC.cs" />
+    <Compile Include="01_Array_Strings\StringCompression.cs" />
+    <Compile Include="01_Array_Strings\StringToInt.cs" />
+    <Compile Include="01_Array_Strings\TrappingRainWater.cs" />
+    <Compile Include="01_Array_Strings\Trial.cs" />
+    <Compile Include="01_Array_Strings\TwoSum.cs" />
+    <Compile Include="01_Array_Strings\ValidParenthese.cs" />
+    <Compile Include="01_Array_Strings\ValidPlaindrom.cs" />
+    <Compile Include="04_LinkedList\ReverseLinkedList.cs" />
+    <Compile Include="05_Sorting_Searching\RemoveDuplicatesfromSortedArray.cs" />
+    <Compile Include="05_Sorting_Searching\General\MergeSort.cs" />
+    <Compile Include="50_OA_Microsoft\StringWithout3IdenticalConsecutiveLetters.cs" />
+    <Compile Include="50_OA_Microsoft\SwapsPlaindorme.cs" />
+    <Compile Include="05_Sorting_Searching\General\Quickselect.cs" />
+    <Compile Include="05_Sorting_Searching\General\QuickSort.cs" />
+    <Compile Include="05_Sorting_Searching\Search2DMatrix.cs" />
+    <Compile Include="06_Backtracking\WordSearch.cs" />
+    <Compile Include="05_Sorting_Searching\SearchinRotatedSortedArray.cs" />
+    <Compile Include="05_Sorting_Searching\WordSearchII.cs" />
+    <Compile Include="07_Tree\ValidateBST.cs" />
+    <Compile Include="04_LinkedList\RemoveNthFromEndC.cs" />
+    <Compile Include="Others\ReverseVowelsString.cs" />
+    <Compile Include="05_Sorting_Searching\SortedInsertPos.cs" />
+    <Compile Include="50_OA_Microsoft\SquareRoot.cs" />
+    <Compile Include="999_UnorganizedPbs\SerializeDeserializeTree.cs" />
+    <Compile Include="999_UnorganizedPbs\SingleNumber.cs" />
+    <Compile Include="999_UnorganizedPbs\SpiralOrderMatrixII.cs" />
+    <Compile Include="999_UnorganizedPbs\SplitArrayLargestSum.cs" />
+    <Compile Include="999_UnorganizedPbs\WordLadder.cs" />
+    <Compile Include="01_Array_Strings\ReverseNum.cs" />
+    <Compile Include="01_Array_Strings\SubArraySum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="02_Graph\00_general\" />
+    <Folder Include="02_Graph\02_BFS\" />
+    <Folder Include="03_Greedy\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
