@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/sort-an-array/
+    /// <ID>048</ID>
+    /// </summary>
     class Sorting
     {
         #region

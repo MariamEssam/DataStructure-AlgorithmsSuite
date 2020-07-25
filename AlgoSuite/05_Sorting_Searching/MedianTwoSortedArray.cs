@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/median-of-two-sorted-arrays/
+    /// <ID>038</ID>
+    /// </summary>
     class MedianTwoSortedArray
     {
         public double FindMedianSortedArrays(int[] nums1, int[] nums2)

@@ -8,25 +8,31 @@ namespace AlgoSuite
 {
     class NextPermutation
     {
-        public List<int> nextPermutation(List<int> A)
+        /// <summary>
+        /// https://leetcode.com/problems/next-permutation/
+        /// <ID>029</ID>
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public List<int> nextPermutation(List<int> nums)
         {
-            if (A.Count <= 1) return A;
-            int index = A.Count - 2;
-            while(index>=0&& A[index]>=A[index+1])
+            if (nums.Count <= 1) return nums;
+            int index = nums.Count - 2;
+            while(index>=0&& nums[index]>=nums[index+1])
             {
                 index--;
             }
             if(index>=0)
             {
                 int ptr = index;
-                while(ptr<A.Count -1&&A[index]<A[ptr+1])
+                while(ptr<nums.Count -1&&nums[index]<nums[ptr+1])
                 {
                     ptr++;
                 }
-                swap(A, index, ptr);
+                swap(nums, index, ptr);
             }
-            reverse(A, index + 1);
-            return A;
+            reverse(nums, index + 1);
+            return nums;
         }
         void swap(List<int> A,int i,int j)
         {
@@ -43,6 +49,17 @@ namespace AlgoSuite
                 startindex++;
                 endindex--;
             }
+        }
+        public string GetPermutation(int n, int k)
+        {
+            List<int> res = new List<int>();
+            for (int i = 0; i < n; i++)
+                res.Add(i + 1);
+            for(int i=0;i<k;i++)
+            {
+                res = nextPermutation(res);
+            }
+            return string.Join("",res);
         }
     }
 }

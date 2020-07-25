@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
-    class DistributeCandies2
+    /// <summary>
+    /// https://leetcode.com/problems/distribute-candies/
+    /// <ID>051</ID>
+    /// </summary>
+    class DistributeCandiesC
     {
         public int DistributeCandies(int[] candies)
         {

@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/binary-search/
+    /// <ID>030</ID>
+    /// </summary>
     class BinarySearch
     {
+
         int searchhelper(int[] arr, int start,int end,int item)
         {
             int index = -1;

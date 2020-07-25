@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/product-of-the-last-k-numbers/
+    /// <ID>047</ID>
+    /// </summary>
     class ProductOfNumbers
     {
         List<int> numslist;

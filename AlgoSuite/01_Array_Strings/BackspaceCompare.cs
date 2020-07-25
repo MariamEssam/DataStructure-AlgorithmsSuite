@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/backspace-string-compare/
+    /// <ID>049</ID>
+    /// </summary>
     class BackspaceCompareC
     {
         int findendIndex(char[] arr)

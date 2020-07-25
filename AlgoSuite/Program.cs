@@ -8,211 +8,110 @@ namespace AlgoSuite
 {
     class Program
     {
-        /// <summary>
-        /// <tag></tag>
-        /// <ID></ID>
-        /// <code></code>
-        /// <Link></Link>
-        /// </summary>
+        static TreeNode ConvertStringTree(string str)
+        {
+            string[] str_arr = str.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            TreeNode root = new TreeNode(int.Parse(str_arr[0]));
+            Queue<TreeNode> que = new Queue<TreeNode>();
+            que.Enqueue(root);
+            for (int i=1;i<str_arr.Length;i+=2)
+            {
+                TreeNode node = que.Dequeue();
+                if (i < str_arr.Length && str_arr[i] != "null")
+                {
+                    node.left = new TreeNode(int.Parse(str_arr[i]));
+                    que.Enqueue(node.left);
+                }
+               if (i+1 < str_arr.Length && str_arr[i+1] != "null")
+                {
+                    node.right = new TreeNode(int.Parse(str_arr[i+1]));
+                    que.Enqueue(node.right);
+                }
+            }
+            return root;
+        }
         static void Main(string[] args)
         {
-            //_02_Graph.Graph test = new _02_Graph.Graph(4);
-            //test.addEdgeUndirected(0, 1);
-            //test.addEdgeUndirected(0, 2);
-            //test.addEdgeUndirected(1, 2);
-            //test.addEdgeUndirected(2, 0);
-            //test.addEdgeUndirected(2, 3);
-            //test.addEdgeUndirected(3, 3);
-            //test.print();
-            //test.DFS();
-            //LongestPlaindromeC cc = new LongestPlaindromeC();
-            // cc.LongestPalindrome("abcba");
-            //RotateImageC pt = new RotateImageC();
-            //pt.Rotate(new int[][] {new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } });
-            //int[][] matrix=new int[][] { new int[] { 1, 0, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } };
-            //SetMatrixZeroes cc = new SetMatrixZeroes();
-            // cc.SetZeroes(matrix);
-            //TrappingRainWater trappingwater = new TrappingRainWater();
-            //trappingwater.Trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
-            //char[] str = "Mr John Smith    ".ToCharArray();
-
-            // Prints the replaced string 
-            //ReplaceEmptySpace rr = new ReplaceEmptySpace();
-            //rr.ReplaceSpace(str, 13);
-            //RotateStringC strr = new AlgoSuite.RotateStringC();
-            //strr.RotateString("abcde", "cdeab");
-            //StringCompression compress = new StringCompression();
-            //compress.Compress(new char[] { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' });
-            //ListNode Node = new ListNode(1);
-            //Node.next = new ListNode(2);
-            //Node.next.next = new ListNode(3);
-            //Node.next.next.next = new ListNode(3);
-            //Node.next.next.next.next = new ListNode(2);
-            //Node.next.next.next.next.next = new ListNode(1);
-            //Node.next.next.next.next.next = new ListNode(6);
-            //ReverseLinkedList rev = new ReverseLinkedList();
-            //rev.ReverseList(Node);
-            //PalindromeLinkedList ls = new PalindromeLinkedList();
-            //ls.IsPalindrome(Node);
-            //AddTwoNumbersII sumtwolist = new AddTwoNumbersII();
-            //sumtwolist.AddTwoNumbers(Node, null);
-            //MedianTwoSortedArray or = new MedianTwoSortedArray();
-            //or.FindMedianSortedArrays(new int[] { 1,2, 3 }, new int[] { 2 });
-            //Sorting sort = new Sorting();
-            //int[] arr = new int[] {1,3};
-            //Array.Sort(arr);
-            //sort.MergeSort(arr);
-            //NumbersWithEqualDigitSum dg = new NumbersWithEqualDigitSum();
-            //int o=dg.MaxEqualdigitsSum(arr);
-            //StringWithout3IdenticalConsecutiveLetters swap = new StringWithout3IdenticalConsecutiveLetters();
-            //int val = swap.MinimumSwaps("bbaabbaabbabab");
-            //SwapsPlaindorme plaindrome = new SwapsPlaindorme();
-            //int soz=plaindrome.MinSwaps("asflkj");
-            //CountingInversions cnt = new CountingInversions();
-            //int c=cnt.InversionsCount(arr);
-            //QuickSort dor = new QuickSort();
-            //dor.Sort(arr);
-            //Quickselect sele = new Quickselect();
-            //int s=sele.QuickSelectKth(arr, 13);
-            //BinarySearch bs = new BinarySearch();
-            //int index = bs.Search(arr,2);
-            //FindMinimuminRotatedSortedArray min = new FindMinimuminRotatedSortedArray();
-            //int m=min.FindMin(arr);
-            //int[][] matrix = new int[][] { new int[] { 1,1 }};
-            //Search2DMatrix m = new Search2DMatrix();
-            //bool isfounf=m.SearchMatrix(matrix, 19);
-            //char[][] ss = new char[][] { new char[] { 'o', 'a', 'a', 'n' }, new char[] { 'e', 't', 'a', 'e' }, new char[] { 'i', 'h', 'k', 'r' }, new char[] { 'i', 'f', 'l', 'v' } };
-            //string[] stl = new string[] { "oath", "pea", "eat", "rain" };
-            //WordSearchII wddd = new WordSearchII();
-            //IList<string> s= wddd.FindWords(ss, stl);
-            //WordSearch wd = new WordSearch();
-            //bool es=wd.Exist(ss, "aa");
-            //LetterCombinationsofaPhoneNumber comb = new LetterCombinationsofaPhoneNumber();
-            //comb.LetterCombinations("23");
-            //SearchinRotatedSortedArray srd = new SearchinRotatedSortedArray();
-            //int index=srd.Search(arr, 5);
-            //ValidateBST BST = new AlgoSuite.ValidateBST();
-            //TreeNode nnsn = new TreeNode(5);
-            //nnsn.left = new AlgoSuite.TreeNode(3);
-            //nnsn.left.left = new AlgoSuite.TreeNode(1);
-            //nnsn.left.right = new AlgoSuite.TreeNode(9);
-            //nnsn.right = new AlgoSuite.TreeNode(7);
-            //nnsn.right.left = new AlgoSuite.TreeNode(6);
-            //nnsn.right.right = new AlgoSuite.TreeNode(18);
-            //LCA_BST lca = new LCA_BST();
-            //lca.LowestCommonAncestor(nnsn, nnsn.left.right,nnsn.left);
-            //bool isValid = BST.IsValidBST(nnsn);
-            //AlgoSuite.Tree.Node root = new Tree.Node();
-            //root.val = 1;
-            //root.left = new Tree.Node();
-            //root.left.val = 2;
-            //root.right = new Tree.Node();
-            //root.right.val = 3;
-            //root.left.left = new Tree.Node();
-            //root.left.left.val = 4;
-            //root.left.right = new Tree.Node();
-            //root.left.right.val = 5;
-            //root.right.left = new Tree.Node();
-            //root.right.left.val = 6;
-            //root.right.right = new Tree.Node();
-            //root.right.right.val = 7;
-            //AlgoSuite.Tree.PopulatingNextRightPointers dd = new Tree.PopulatingNextRightPointers();
-            //dd.Connect(root);
-            //LongestSubs ss = new LongestSubs();
-            //string s = ss.LongestSubstring("aabbaabbaabbaa");
-            //LexicographicallySmallestStr smm = new LexicographicallySmallestStr();
-            //string ss = smm.RemoveChar("abcda");
-            //MinDeletions mm = new MinDeletions();
-            //int s=mm.findMinDeletion("example");
-            //IdenticalConsecutiveLetters ident = new IdenticalConsecutiveLetters();
-            //string str= ident.RemoveThreeIdenticalletters("");
-            //LongestSemiAlternating semi = new AlgoSuite.LongestSemiAlternating();
-            //int x=semi.LongestSemiAlternatingSub("a");
-            //MinStepsEqualPiles mxx = new MinStepsEqualPiles();
-            //int x= mxx.minSteps(new int[] { 1,2,5 });
-            //DayofWeek_OA d = new DayofWeek_OA();
-            //string s= d.DayofWeek("Sat", 23);
-            //MaxPossibleValue pC:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\Program.csoss = new MaxPossibleValue();
-            //int va = poss.findMax(-999);
-            //MaxInsertsStringWithoutthreea poss = new MaxInsertsStringWithoutthreea();
-            //int n=poss.find("");
-            //LargestInteger_OA lg = new LargestInteger_OA();
-            //int i =lg.LargestInt(new int[] { 1, 2, 3, -2,4 });
-            //MinSwapWR_OA dddd = new MinSwapWR_OA();
-            //int m=dddd.MinSwap("WWRRWWRW");
-            //MinDeletionAB_OA del = new MinDeletionAB_OA();
-            //int i=del.MinDeletion("AABBB");
-            //ParticleVelocity vv = new AlgoSuite.ParticleVelocity();
-            //int ff=vv.findvelocityPeriode(new int[] { -1, 1, 3, 3, 3, 2, 3, 2, 1, 0 });
-            //FirstLastPos po = new FirstLastPos();
-            //int[] indices = po.SearchRange(new int[] { 1, 1, 1, 2, 2, 2, 8, 8, 8, 9, 10, 11 },8);
-            //long val = (long)Math.Pow(71045970 % 64735492, 41535484) % 64735492;
-            //PowerReminder rem = new PowerReminder();
-            //long val = rem.pow(71045970, 41535484, 64735492);
-            //PeakIndexInMountainC pk = new PeakIndexInMountainC();
-            //int isMoutain=pk.PeakIndexInMountainArray(new int[] { 0, 1,2,3,4,5,6,7,8,9,20,20,20,17, 18 });
-            //FruitIntoBaskets frt = new AlgoSuite.FruitIntoBaskets();
-            //frt.TotalFruit(new int[] { 1, 2, 3, 2, 2 });
-            //CountSmallerAfterSelf aa = new CountSmallerAfterSelf();
-            //aa.CountSmaller(new int[] { 5, 2, 4, 1 });
-            //DecodeStringC dec = new AlgoSuite.DecodeStringC();
-            // string str = dec.DecodeString("3[a]2[bc]");
-            //AlgoGraph.Graph graph = new AlgoGraph.Graph(6);
-            //graph.addEdgeDirected(5,2);
-            //graph.addEdgeDirected(5, 0);
-            //graph.addEdgeDirected(4, 0);
-            //graph.addEdgeDirected(4, 1);
-            //graph.addEdgeDirected(2, 3);
-            //graph.addEdgeDirected(3, 1);
-            //graph.TopologicalSort();
-            //bool s = graph.IsCyclicUndirected();
-            //LengthofLongestSubseq subseq = new LengthofLongestSubseq();
-            //subseq.longestSubsequenceLength(new List<int>() { 1, 3, 5, 6, 4, 8, 4, 3, 2, 1 });
-            //LongestPlaindromeC longest = new AlgoSuite.LongestPlaindromeC();
-            //string s  = longest.LongestPalindrome("babad");
-            //SplitArrayLargestSum lgs = new SplitArrayLargestSum();
-            //int v = lgs.SplitArray(new int[] { 7, 2, 5, 10, 8 }, 2);
-            //PlusOneArray plusone = new PlusOneArray();
-            //plusone.plusOne(new List<int> { 0, 6, 0, 6, 4, 8, 8, 1 });
-            //LargestNum lg = new AlgoSuite.LargestNum();
-            //string s =lg.LargestNumber(new List<int> { 128,12 });
-            //MaxGapC cc = new AlgoSuite.MaxGapC();
-            //int dist = cc.maximumGap(new List<int> { 3,5,4,2 });
-            //AntiDiagonal dd = new AntiDiagonal();
-            //dd.diagonal(new List<List<int>>() { new List<int> { } });
-            //NextPermutation per = new NextPermutation();
-            //per.nextPermutation(new List<int> { 3,2,1 });
-            //SpiralOrderMatrixII sp = new SpiralOrderMatrixII();
-            //sp.generateMatrix(3);
-            //NearestSmaller ss = new NearestSmaller();
-            //ss.prevSmaller(new List<int> { 1, 3, 0, 2, 5 });
-            //MinHeap min = new MinHeap();
-            //min.add(10);
-            //min.add(2);
-            //min.add(3);
-            //min.add(11);
-            //min.add(9);
-            //min.poll();
-            //min.add(2);
-            //min.add(2);
-            //Trie mytrie = new Trie();
-            //mytrie.Insert("app");
-            //mytrie.Insert("apple");
-            //mytrie.Insert("beer");
-            //mytrie.Insert("add");
-            //mytrie.Insert("jam");
-            //mytrie.Insert("rental");
-
-            //bool isfound = mytrie.Search("jan");
-            LRUCache cache = new LRUCache(2);
-            int val = 0;
-            val = cache.Get(2);
-            cache.Put(2, 6);
-            val = cache.Get(1);
-            cache.Put(1, 5);
-            cache.Put(1, 2);
-            val = cache.Get(1);
-            val = cache.Get(2);
+            //int[] arr = new int[] { 1, 2, 5, 10 };
+            //CoinChangeC cc = new CoinChangeC();
+            //int x = cc.CoinChange(arr, 18);
+            //ContiguousArray cngt = new AlgoSuite.ContiguousArray();
+            //cngt.findMaxLength(new int[] { 0, 0, 1, 0, 0, 0, 1, 1 });
+            //GenerateParentheses par = new GenerateParentheses();
+            //IList<string> str= par.GenerateParenthesis(3);
+            //NumberComplement num = new NumberComplement();
+            //num.FindComplement(5);
+            //int[][] arr = new int[][] { new int[] { -4, -3 }, new int[] { 1, 0 }, new int[] { 3, -1 }, new int[] { 0, -1 }, new int[] { -5, 2 } };
+            //StraightLine strline = new StraightLine();
+            //strline.CheckStraightLine(arr);
+            //RemoveKDigitsC gg = new RemoveKDigitsC();
+            //gg.RemoveKdigits("1432219", 3);
+            //ListNode head = new ListNode(1);
+            //ListNode node = head;
+            //int i = 2;
+            //while(i<=7)
+            //{
+            //    node.next = new AlgoSuite.ListNode(i++);
+            //    node = node.next;
+            //}
+            //OddEvenLS ss = new AlgoSuite.OddEvenLS();
+            //ss.OddEvenList(head);
+            //PermutationString sp = new PermutationString();
+            //bool isv=sp.CheckInclusion("ab", "eidbaooo");
+            //StockSpanner stk = new AlgoSuite.StockSpanner();
+            //int r= stk.Next(29);
+            //r = stk.Next(91);
+            //r = stk.Next(62);
+            //r = stk.Next(76);
+            //r = stk.Next(51);
+            //r = stk.Next(75);
+            //r = stk.Next(85);
+            //CoinChange2 c = new CoinChange2();
+            //c.Change(5, new int[] { 1, 2, 5 });
+            //TreeNode node = new TreeNode(10);
+            //node.left = new TreeNode(5);
+            //node.left.left = new TreeNode(3);
+            //node.left.right = new TreeNode(7);
+            //node.left.left.left = new TreeNode(1);
+            //node.left.right.left = new TreeNode(8);
+            //node.right = new TreeNode(15);
+            //node.right.left = new TreeNode(13);
+            //node.right.right = new TreeNode(8);
+            //RangeSumofBST bst = new RangeSumofBST();
+            //int s = bst.RangeSumBST(node, 7, 15);
+            //SurroundedRegions reg = new SurroundedRegions();
+            //reg.Solve(new char[][] { new char[] { 'O' } });
+            //LongestDuplicateSubstring st = new LongestDuplicateSubstring();
+            //st.LongestDupSubstring("banaba");
+            //TreeNode node = ConvertStringTree("0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,0,0");
+            //node.right = new TreeNode(0);
+            //WidthOfBinaryTreeC wss = new AlgoSuite.WidthOfBinaryTreeC();
+            //int v= wss.WidthOfBinaryTree(node);
+            //SumRootLeafNumbers rootleaf = new SumRootLeafNumbers();
+            //int s = rootleaf.SumNumbers(node);
+            //PerfectSquares sq = new PerfectSquares();
+            //int s = sq.NumSquares(12); 
+            //HammingDistanceC hm = new HammingDistanceC();
+            //hm.HammingDistance(1, 4);
+            //PrisonCellsAfterNDays pr = new AlgoSuite.PrisonCellsAfterNDays();
+            //int[] cells = new int[] { 1, 0, 0, 1, 0, 0, 1, 0 };
+            //cells= pr.PrisonAfterNDays(cells, 1000000000);
+            //FlattenMultilevelDoublyLinkedList.Node nn = new FlattenMultilevelDoublyLinkedList.Node();
+            //nn.child = new FlattenMultilevelDoublyLinkedList.Node();
+            //nn.child.child = new FlattenMultilevelDoublyLinkedList.Node();
+            //nn.child.child.child = new FlattenMultilevelDoublyLinkedList.Node();
+            //FlattenMultilevelDoublyLinkedList vv = new FlattenMultilevelDoublyLinkedList();
+            //vv.Flatten(nn);
+            //SmallerNumbersThanCurrentC cd = new SmallerNumbersThanCurrentC();
+            //cd.SmallerNumbersThanCurrent(new int[] { 8, 1, 2, 2, 3 });
+            ListNode nn = new ListNode(1);
+            nn.next = new ListNode(2);
+            nn.next.next = new ListNode(3);
+            nn.next.next.next = new ListNode(4);
+            nn.next.next.next.next = new ListNode(5);
+            nn.next.next.next.next.next = new ListNode(6);
+            RemoveLinkedListElements rr = new RemoveLinkedListElements();
+            ListNode d= rr.RemoveElements(nn, 6);
 
         }
     }

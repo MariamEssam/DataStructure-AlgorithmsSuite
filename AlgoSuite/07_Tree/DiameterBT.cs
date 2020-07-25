@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/diameter-of-binary-tree/
+    /// <ID>028</ID>
+    /// </summary>
     class DiameterBT
     {
         int maxsum = 0;

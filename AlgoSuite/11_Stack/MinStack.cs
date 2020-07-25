@@ -19,7 +19,7 @@ namespace AlgoSuite
 
         public void Push(int x)
         {
-            if (min.Count == 0 || min.Peek() <= x)
+            if (min.Count == 0 || min.Peek() >= x)
                 min.Push(x);
             stk.Push(x);
         }

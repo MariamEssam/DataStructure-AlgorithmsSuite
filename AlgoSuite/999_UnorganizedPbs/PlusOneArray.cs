@@ -6,39 +6,34 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/plus-one/
+    /// <ID>031</ID>
+    /// </summary>
     class PlusOneArray
     {
-        public List<int> plusOne(List<int> A)
+        public int[] PlusOne(int[] digits)
         {
-            int i = 0;
-            int carryon = 0;
-            do
+            int carryon = 1;
+            int i = digits.Length - 1;
+            while (carryon == 1 && i >= 0)
             {
-                if (i < A.Count)
-                {
-                    int val = A[A.Count - i - 1];
-                    A[A.Count - i - 1] = val % 10;
-                    carryon = val / 10;
-                }
+                if (digits[i] == 9)
+                    digits[i] = 0;
                 else
                 {
-                    A.Insert(0, carryon);
+                    digits[i]++;
                     carryon = 0;
                 }
-                i++;
-            } while (carryon != 0);
-            for(int k=0;k<=i;k++)
-            {
-                if (A[k] == 0)
-                {
-                    A.RemoveAt(k);
-                    k--;
-                    i--;
-                }
-                else
-                    break;
+               i--;
             }
-            return A;
+           if(carryon==1)
+            {
+                digits = new int[digits.Length + 1];
+                digits[0] = 1;
+            }
+           
+           return digits;
         }
     }
 }

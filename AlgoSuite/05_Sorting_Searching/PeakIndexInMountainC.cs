@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/peak-index-in-a-mountain-array/
+    /// <ID>041</ID>
+    /// </summary>
     class PeakIndexInMountainC
     {
         public int PeakIndexInMountainArray(int[] A)

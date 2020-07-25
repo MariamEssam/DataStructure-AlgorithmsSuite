@@ -14,8 +14,8 @@ namespace AlgoSuite
             while(i<j)
             {
                 char c = s[i];
-                s[i] = s[j];
-                s[j] = c;
+                s[i++] = s[j];
+                s[j--] = c;
             }
         }
     }

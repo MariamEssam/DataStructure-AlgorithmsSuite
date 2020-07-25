@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/search-insert-position/
+    /// <ID></ID>
+    /// </summary>
     class SortedInsertPos
     {
         public int SearchInsert(int[] nums, int target)
         {
-            int low = 0;int high = nums.Length - 1;
-            while(low<=high)
+            int low = 0; int high = nums.Length;
+            while (low < high)
             {
                 int mid = (low + high) / 2;
                 if (nums[mid] < target)
@@ -20,14 +24,14 @@ namespace AlgoSuite
                 }
                 else if (nums[mid] > target)
                 {
-                    high = mid - 1;
+                    high = mid;
                 }
                 else
                 {
                     return mid;
                 }
             }
-            return low - 1;
+            return low;
         }
     }
 }
