@@ -8,7 +8,7 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/first-unique-character-in-a-string/
-    /// <ID>064</ID>
+    /// <ID>1387</ID>
     /// </summary>
     class FirstUniqueCharacter
     {

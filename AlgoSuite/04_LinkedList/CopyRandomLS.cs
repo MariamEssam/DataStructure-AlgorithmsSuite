@@ -6,48 +6,40 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/copy-list-with-random-pointer/
+    /// <ID>1138</ID>
+    /// </summary>
     class CopyRandomLS
     {
+        // Definition for a Node.
         public class Node
         {
             public int val;
             public Node next;
             public Node random;
 
-            public Node() { }
-            public Node(int _val, Node _next, Node _random)
+            public Node(int _val)
             {
                 val = _val;
-                next = _next;
-                random = _random;
-            }
-            Dictionary<Node, Node> NodeDic = new Dictionary<Node, Node>();
-            public Node CopyRandomList(Node head)
-            {
-                if (head == null) return null;
-                Node headcopy = new Node(head.val, null, null);
-                NodeDic.Add(head, headcopy);
-                Node nodetemp = head.next;
-                Node curr = headcopy.next;
-
-                while (nodetemp != null)
-                {
-                    Node n = new AlgoSuite.CopyRandomLS.Node(nodetemp.val, curr, null);
-                    NodeDic.Add(nodetemp, n);
-                    curr.next = n;
-                    curr = curr.next;
-                    nodetemp = nodetemp.next;
-                }
-                nodetemp = head;
-                curr = head;
-                while (nodetemp != null)
-                {
-                    curr.random = NodeDic[nodetemp];
-                    curr = curr.next;
-                    nodetemp = nodetemp.next;
-                }
-                return headcopy;
+                next = null;
+                random = null;
             }
         }
+
+        Dictionary<Node, Node> dic = new Dictionary<Node, Node>();
+
+        public Node CopyRandomList(Node head)
+        {
+            if (head == null) return null;
+
+            if (dic.ContainsKey(head)) return dic[head];
+            Node node = new Node(head.val);
+            dic.Add(head, node);
+            node.next = CopyRandomList(head.next);
+            node.random = CopyRandomList(head.random);
+            return node;
+        }
     }
+    
 }

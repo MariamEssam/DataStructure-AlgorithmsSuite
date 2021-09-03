@@ -10,10 +10,8 @@ namespace AlgoSuite
     {
         /// <summary>
         /// https://leetcode.com/problems/longest-substring-without-repeating-characters/
-        /// <ID>013</ID>
+        /// <ID>0013</ID>
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
         public int LengthOfLongestSubstring(string s)
         {
             HashSet<char> set_char = new HashSet<char>();

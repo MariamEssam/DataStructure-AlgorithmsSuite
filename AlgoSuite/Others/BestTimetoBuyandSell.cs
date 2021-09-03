@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+    /// <ID>1122</ID>
+    /// </summary>
     class BestTimetoBuyandSell
     {
         public int MaxProfit(int[] prices)

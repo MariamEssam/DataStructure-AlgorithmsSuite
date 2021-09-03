@@ -8,28 +8,43 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/longest-increasing-subsequence/
+    /// <ID>1300</ID>
     /// </summary>
     class LongestIncreasingSubseq
     {
         public int LengthOfLIS(int[] nums)
         {
             if (nums.Length == 0) return 0;
-            int[] LincrSeq = new int[nums.Length];
-            int max = 1;
-            for (int i = 0; i < nums.Length; i++)
+            int[] dp = new int[nums.Length];
+            dp[0] = 1;
+            int maxans = 1;
+            for (int i = 1; i < nums.Length; i++)
             {
-                LincrSeq[i] = 1;
+                int maxval = 0;
                 for (int j = 0; j < i; j++)
                 {
-                    if (nums[i] > nums[j] && LincrSeq[i] < LincrSeq[j] + 1)
-                    {
-                        LincrSeq[i] = LincrSeq[j] + 1;
-                        max = Math.Max(max, LincrSeq[i]);
-                    }
+                    if (nums[i] > nums[j])
+                        maxval = Math.Max(maxval, dp[i]);
                 }
-
+                dp[i] = maxval + 1;
+                maxans = Math.Max(dp[i], maxans);
             }
-            return max;
+            return maxans;
+        }
+        public int LengthOfLIS_BruteForce(int[] nums)
+        {
+            return LengthofLISHelper(nums, int.MinValue, 0);
+
+        }
+        public int LengthofLISHelper(int[] nums, int prev, int currposition)
+        {
+            if (currposition == nums.Length)
+                return 0;
+            int taken = 0;
+            if (nums[currposition] > prev)
+                taken = 1 + LengthofLISHelper(nums, nums[currposition], currposition + 1);
+            int nottaken = LengthofLISHelper(nums, prev, currposition + 1);
+            return Math.Max(nottaken, taken);
         }
     }
 }

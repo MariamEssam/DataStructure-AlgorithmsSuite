@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
-    
+    /// <summary>
+    /// https://leetcode.com/problems/two-sum/
+    /// <ID>1001</ID>
+    /// </summary>
     class TwoSumC
     {
-        /// <summary>
-        /// <tag>Array&String</tag>
-        /// <ID>1</ID>
-        /// <code>000007</code>
-        /// <Link>https://leetcode.com/problems/two-sum/</Link>
-        /// </summary>
         public int[] TwoSum(int[] nums, int target)
         {
             Dictionary<int, int> dic = new Dictionary<int, int>();

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/find-median-from-data-stream/
+    /// <ID>1295</ID>
+    /// </summary>
     class MedianFinder
     {
         List<int> stream;

@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 namespace AlgoSuite
 {
     /// <summary>
-    /// <tag>Array&String</tag>
-    /// <ID></ID>
-    /// <code></code>
-    /// <Link></Link>
+    /// https://leetcode.com/problems/reverse-words-in-a-string/
+    /// <ID>1151</ID>
     /// </summary>
     class ReverseString
     {

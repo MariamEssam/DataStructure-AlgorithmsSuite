@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/single-number/
+    /// <ID>1136</ID>
+    /// </summary>
     class SingleNumberC
     {
         public int SingleNumber(int[] nums)

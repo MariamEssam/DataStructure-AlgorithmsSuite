@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/maximum-subarray/
+    /// <ID>1053</ID>
+    /// </summary>
     class MaxSubArrayC
     {
 

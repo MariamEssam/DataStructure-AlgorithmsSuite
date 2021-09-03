@@ -10,7 +10,7 @@ namespace AlgoSuite
     {
         public int val;
         public int index;
-        public Pair(int _val,int _index)
+        public Pair(int _index,int _val)
         {
             val = _val;
             index = _index;

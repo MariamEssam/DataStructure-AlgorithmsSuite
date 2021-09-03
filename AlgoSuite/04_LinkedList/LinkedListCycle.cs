@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/linked-list-cycle/
+    /// <ID>1141</ID>
+    /// </summary>
     class LinkedListCycle
     {
         public bool HasCycle(ListNode head)

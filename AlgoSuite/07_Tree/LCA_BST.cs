@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+    /// <ID>1236</ID>
+    /// </summary>
     class LCA_BST
     {
-       
         TreeNode CommonAnsector = null;
         uint SeachLCA(TreeNode node,TreeNode p,TreeNode q)
         {

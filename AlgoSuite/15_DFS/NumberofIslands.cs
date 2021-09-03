@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/number-of-islands/
+    /// <ID>1200</ID>
+    /// </summary>
     class NumberofIslands
     {
         void ExposeIslands(char[][] grid, int i, int j)
         {
             if (i >= 0 && i < grid.Length && j >= 0 && j < grid[0].Length && grid[i][j] == '1')
             {
-                grid[i][j] = '#';
+                grid[i][j] = '0';
                 ExposeIslands(grid, i + 1, j);
                 ExposeIslands(grid, i - 1, j);
                 ExposeIslands(grid, i, j + 1);
@@ -28,7 +32,7 @@ namespace AlgoSuite
                 {
                     if (grid[i][j] == '1')
                     {
-                        grid[i][j] = '#';
+                        grid[i][j] = '0';
                         ExposeIslands(grid, i + 1, j);
                         ExposeIslands(grid, i - 1, j);
                         ExposeIslands(grid, i, j + 1);

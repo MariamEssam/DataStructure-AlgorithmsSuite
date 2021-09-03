@@ -45,9 +45,9 @@ namespace AlgoSuite
                     {
                         TreeNode node = NodeStk.Pop();
                         list.Add(node.val);
-                        if (node.left != null)
-                            stktemp.Push(node.right);
                         if (node.right != null)
+                            stktemp.Push(node.right);
+                        if (node.left != null)
                             stktemp.Push(node.left);
                         sizestack--;
                     }

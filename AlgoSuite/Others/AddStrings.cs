@@ -8,7 +8,7 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/add-strings/
-    /// <ID>040</ID>
+    /// <ID>145</ID>
     /// </summary>
     class AddStringsC
     {

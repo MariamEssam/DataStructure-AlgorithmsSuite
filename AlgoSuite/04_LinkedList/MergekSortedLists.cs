@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/merge-k-sorted-lists/
+    /// <ID>1023</ID>
+    /// </summary>
     class MergekSortedLists
     {
         public ListNode MergeKLists(ListNode[] lists)
@@ -43,7 +47,7 @@ namespace AlgoSuite
                     list = new ListNode(min);
                     head = list;
                 }
-                else
+                else if(found)
                 {
                     list.next = new ListNode(min);
                     list = list.next;

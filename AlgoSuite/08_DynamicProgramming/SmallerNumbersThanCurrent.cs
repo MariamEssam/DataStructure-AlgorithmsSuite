@@ -21,7 +21,7 @@ namespace AlgoSuite
                 count[i] += count[i - 1];
             for (int i = 0; i < nums.Length; i++)
                 if(nums[i]!=0)
-                nums[i]=count[nums[i]];
+                nums[i]=count[nums[i] - 1];
             return nums;
         }
 

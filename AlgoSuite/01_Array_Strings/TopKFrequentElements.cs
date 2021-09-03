@@ -8,7 +8,7 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/top-k-frequent-elements/
-    /// <ID>061</ID>
+    /// <ID>1347</ID>
     /// </summary>
     class TopKFrequentElements
     {
@@ -42,5 +42,30 @@ namespace AlgoSuite
             }
             return res.ToArray();
         }
+        class KeyValueCompare : IComparer<KeyValuePair<int, int>>
+        {
+            public int Compare(KeyValuePair<int, int> x, KeyValuePair<int, int> y)
+            {
+                return x.Value.CompareTo(y.Value);
+            }
+        }
+        public int[] TopKFrequent2(int[] nums, int k)
+        {
+            int[] res = new int[k];
+            Dictionary<int, int> dic = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (!dic.ContainsKey(nums[i])) dic.Add(nums[i], 0);
+                dic[nums[i]]++;
+            }
+            KeyValueCompare cmp = new KeyValueCompare();
+            MaxHeap<KeyValuePair<int, int>> maxHeap = new MaxHeap<KeyValuePair<int, int>>(cmp);
+            foreach (var pain in dic)
+                maxHeap.add(pain);
+            for (int i = 0; i < k; i++)
+                res[i] = maxHeap.Poll().Key;
+            return res;
+        }
     }
+
 }

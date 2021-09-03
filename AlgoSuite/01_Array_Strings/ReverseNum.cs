@@ -10,7 +10,7 @@ namespace AlgoSuite
     {
         /// <summary>
         /// https://leetcode.com/problems/reverse-integer/
-        /// <ID>011</ID>
+        /// <ID>1007</ID>
         /// </summary>
         public int Reverse(int x)
         {

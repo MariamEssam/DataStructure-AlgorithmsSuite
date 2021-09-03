@@ -8,7 +8,7 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/product-of-array-except-self/
-    /// <ID>032</ID>
+    /// <ID>1238</ID>
     /// </summary>
     class ProductExceptSelfC
     {

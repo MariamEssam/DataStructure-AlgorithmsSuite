@@ -19,7 +19,10 @@ namespace AlgoSuite.Graph
             val = _val;
             neighbors = _neighbors;
         }
-
+        /// <summary>
+        /// https://leetcode.com/problems/clone-graph/
+        /// <ID>1133</ID>
+        /// </summary>
         class DeepCloneGraph
         {
             Dictionary<int, Node> NodeSet = new Dictionary<int, Node>();

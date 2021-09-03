@@ -8,7 +8,7 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/jewels-and-stones/
-    /// <ID>055</ID>
+    /// <ID>1771</ID>
     /// </summary>
     class JewelsandStones
     {

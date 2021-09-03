@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,30 +7,33 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
-    class MinHeap
+    class MinHeap<T>
     {
+        IComparer<T> compare;
         private int Capacity = 10;
-        int size = 0;
-        int[] items;
-        public MinHeap()
+        //occupied capacity
+        public long size = 0;
+        T[] items;
+        public MinHeap(IComparer<T> comp)
         {
-            items = new int[10];
+            compare = comp;
+            items = new T[10];
         }
-        public int getleftChildindex(int index) { return (2 * index) + 1; }
-        public int getrightChildindex(int index) { return (2 * index) + 2; }
-        public int getParentindex(int index) { return (index - 1) / 2; }
+        public long getleftChildindex(long parentIndex) { return (2 * parentIndex) + 1; }
+        public long getrightChildindex(long parentIndex) { return (2 * parentIndex) + 2; }
+        public long getParentindex(long childIndex) { return (childIndex - 1) / 2; }
 
-        private bool hasleftChild(int index) { return getleftChildindex(index) < size; }
-        private bool hasRightChild(int index) { return getrightChildindex(index) < size; }
-        private bool hasParent(int index) { return getParentindex(index) >= 0; }
+        private bool hasleftChild(long index) { return getleftChildindex(index) < size; }
+        private bool hasRightChild(long index) { return getrightChildindex(index) < size; }
+        private bool hasParent(long index) { return getParentindex(index) >= 0; }
 
-        private int leftChild(int index) { return items[getleftChildindex(index)]; }
-        private int RightChild(int index) { return items[getrightChildindex(index)]; }
-        private int Parent(int index) { return items[getParentindex(index)]; }
+        private T leftChild(long index) { return items[getleftChildindex(index)]; }
+        private T RightChild(long index) { return items[getrightChildindex(index)]; }
+        private T Parent(long index) { return items[getParentindex(index)]; }
 
-        private void swap(int indexOne,int indexTwo)
+        private void swap(long indexOne,long indexTwo)
         {
-            int temp = items[indexOne];
+            T temp = items[indexOne];
             items[indexOne] = items[indexTwo];
             items[indexTwo] = temp;
         }
@@ -41,21 +45,21 @@ namespace AlgoSuite
                 Capacity *= 2;
             }
         }
-        public int Peek()
+        public T Peek()
         {
             if (size == 0) throw new Exception();
             return items[0];
         }
-        public int poll()
+        public T poll()
         {
             if (size == 0) throw new Exception();
-            int item = items[0];
+            T item = items[0];
             items[0] = items[size - 1];
             size--;
             heapifydown();
             return item;
         }
-        public void add(int item)
+        public void add(T item)
         {
             ensureExtraCapacity();
             items[size] = item;
@@ -64,15 +68,15 @@ namespace AlgoSuite
         }
         private void heapifydown()
         {
-            int index = 0;
+            long index = 0;
             while(hasleftChild(index))
             {
-                int childIndex = getleftChildindex(index);
-                if(hasRightChild(index)&&items[getrightChildindex(index)]<items[childIndex])
+                long childIndex = getleftChildindex(index);
+                if(hasRightChild(index)&&compare.Compare(items[getrightChildindex(index)],items[childIndex])==-1)
                 {
                     childIndex = getrightChildindex(index);
                 }
-                if (items[childIndex] > items[index])
+                if (compare.Compare(items[childIndex] , items[index])==1)
                     break;
                 swap(childIndex, index);
                 index = childIndex;
@@ -80,10 +84,10 @@ namespace AlgoSuite
         }
         private void heapifyup()
         {
-            int index = size - 1;
-            while(hasParent(index)&&Parent(index)>items[index])
+            long index = size - 1;
+            while(hasParent(index)&&compare.Compare(Parent(index),items[index])==1)
             {
-                int ParentIndex = getParentindex(index);
+                long ParentIndex = getParentindex(index);
                 swap(index, ParentIndex);
                 index = ParentIndex;
             }

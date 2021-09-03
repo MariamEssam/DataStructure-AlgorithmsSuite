@@ -8,71 +8,39 @@ namespace AlgoSuite
 {
     class FindAllAnagrams
     {
+
         public IList<int> FindAnagrams(string s, string p)
         {
-            IList<int> results = new List<int>();
-            Dictionary<char, int> p_dic = new Dictionary<char, int>();
-            Dictionary<char, int> window_dic = new Dictionary<char, int>();
-
-            int ptr1 = 0, ptr2 = 0;
+            IList<int> result = new List<int>();
             if (s.Length < p.Length)
-                return results;
-            foreach(var c in p)
+                return result;
+            int[] p_arr = new int[26];
+            int[] s_arr = new int[26];
+            foreach (char c in p)
+                p_arr[c - 'a']++;
+            for (int i = 0; i < p.Length; i++)
             {
-                if (!p_dic.ContainsKey(c))
-                {
-                    p_dic.Add(c, 0);
-                }
-                p_dic[c]++;
+                s_arr[s[i] - 'a']++;
+            }
+            if (Compare(s_arr, p_arr))
+                result.Add(0);
+            for (int i = p.Length; i < s.Length; i++)
+            {
+                s_arr[s[i] - 'a']++;
+                s_arr[s[i - p.Length] - 'a']--;
+                if (Compare(s_arr, p_arr))
+                    result.Add(i - p.Length + 1);
             }
 
-            for (int i = 0; i < s.Length; ++i)
-            {
-                // add one more letter 
-                // on the right side of the window
-                
-                if (window_dic.ContainsKey(s[i]))
-                {
-                    window_dic[s[i]]++;
-                }
-                else
-                {
-                    window_dic.Add(s[i], 1);
-                }
-                // remove one letter 
-                // from the left side of the window
-                if (i >= p.Length)
-                {
-                    char ch = s[i - p.Length];
-                    if (window_dic[ch] == 1)
-                    {
-                        window_dic.Remove(ch);
-                    }
-                    else
-                    {
-                        window_dic[ch]--;
-                    }
-                }
-                // compare hashmap in the sliding window
-                // with the reference hashmap
-                //if (equal(p_)
-                //{
-                //    output.add(i - np + 1);
-                //}
-            }
-                return results;
+            return result;
         }
-        bool equal(Dictionary<char,int> dic1,Dictionary<char,int> dic2)
+        bool Compare(int[] arr1, int[] arr2)
         {
-            if (dic1.Keys.Count != dic2.Keys.Count)
-                return false;
-            foreach(var item in dic1)
-            {
-                if (dic2.ContainsKey(item.Key) && dic2[item.Key] == dic1[item.Key])
-                    continue;
-                return false;
-            }
-            return true;
+            return Enumerable.SequenceEqual(arr1, arr2);
+            //for (int i = 0; i < arr1.Length; i++)
+            //    if (arr1[i] != arr2[i])
+            //        return false;
+            //return true;
         }
     }
 }

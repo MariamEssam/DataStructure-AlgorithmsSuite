@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/sort-characters-by-frequency/
+    /// <ID>1451</ID>
+    /// </summary>
     class SortCharactersByFrequency
     {
         public string FrequencySort(string s)

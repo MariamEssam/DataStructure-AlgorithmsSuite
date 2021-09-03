@@ -1,0 +1,6 @@
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\onlineassessment\bin\Debug\onlineassessment.exe.config
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\onlineassessment\bin\Debug\onlineassessment.exe
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\onlineassessment\bin\Debug\onlineassessment.pdb
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\onlineassessment\obj\Debug\onlineassessment.csprojResolveAssemblyReference.cache
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\onlineassessment\obj\Debug\onlineassessment.exe
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\onlineassessment\obj\Debug\onlineassessment.pdb

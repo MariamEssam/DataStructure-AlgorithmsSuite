@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/spiral-matrix/
+    /// <ID>1054</ID>
+    /// </summary>
     class SpiralMatrixC
     {
         enum direction { up, down, right, left };

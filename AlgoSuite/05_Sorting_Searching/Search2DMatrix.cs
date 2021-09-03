@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/search-a-2d-matrix/
+    /// <ID>1074</ID>
+    /// </summary>
     class Search2DMatrix
     {
         int geti(int mid,int l)

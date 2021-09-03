@@ -8,7 +8,7 @@ namespace AlgoSuite
 {
     /// <summary>
     /// https://leetcode.com/problems/generate-parentheses/
-    /// <ID>059</ID>
+    /// <ID>1022</ID>
     /// </summary>
     class GenerateParentheses
     {

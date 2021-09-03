@@ -1,0 +1,13 @@
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\bin\Debug\AlgoSuite.exe.config
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\bin\Debug\AlgoSuite.exe
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\bin\Debug\AlgoSuite.pdb
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.exe
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.pdb
+C:\MyPC\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.csprojResolveAssemblyReference.cache
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.csprojAssemblyReference.cache
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.csproj.CoreCompileInputs.cache
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.exe
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\obj\Debug\AlgoSuite.pdb
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\bin\Debug\AlgoSuite.exe.config
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\bin\Debug\AlgoSuite.exe
+C:\MyPC\MyLearningHub\DataStructure&Algorithms\DataStructure-AlgorithmsSuite\AlgoSuite\bin\Debug\AlgoSuite.pdb

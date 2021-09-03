@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/merge-intervals/
+    /// <ID>1056</ID>
+    /// </summary>
     class MergeIntervals
     {
         public int[][] Merge(int[][] intervals)

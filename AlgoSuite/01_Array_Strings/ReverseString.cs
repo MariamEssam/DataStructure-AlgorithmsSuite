@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/reverse-string/
+    /// <ID>1344</ID>
+    /// </summary>
     class ReverseStringC
     {
         public void ReverseString(char[] s)

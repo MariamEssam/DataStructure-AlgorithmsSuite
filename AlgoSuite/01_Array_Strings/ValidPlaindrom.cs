@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/valid-palindrome/
+    /// <ID>1125</ID>
+    /// </summary>
     class ValidPlaindrom
     {
         public bool IsPalindrome(string s)

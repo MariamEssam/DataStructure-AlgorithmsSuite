@@ -6,33 +6,58 @@ using System.Threading.Tasks;
 using System.Collections.Specialized;
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/lru-cache/
+    /// <ID>1146</ID>
+    /// </summary>
+    public class CachePair<T1, T2>
+    {
+        public T1 First { get; set; }
+        public T2 Second { get; set; }
+        public CachePair(T1 f,T2 s)
+        {
+            First = f;
+            Second = s;
+        }
+    }
     public class LRUCache
     {
-        OrderedDictionary dic_ordered;
-        int cap = 0;
+        private int capacity;
+        private Dictionary<int, CachePair<int, int>> dic;
+        private LinkedList<CachePair<int, int>> cachedlst;
+
         public LRUCache(int capacity)
         {
-            dic_ordered = new OrderedDictionary(capacity);
-            cap = capacity;
+            this.capacity = capacity;
+            dic = new Dictionary<int, CachePair<int, int>>();
+            cachedlst = new LinkedList<CachePair<int, int>>();
         }
-
         public int Get(int key)
         {
-            if (!dic_ordered.Contains(key)) return -1;
-            int val =  (int)dic_ordered[(object)key];
-            dic_ordered.Remove(key);
-            dic_ordered.Add(key, val);
-            return val;
+            if (!dic.ContainsKey(key)) return -1;
+            CachePair<int, int> pair = dic[key];
+            cachedlst.Remove(pair);
+            cachedlst.AddFirst(pair);
+            return pair.Second;
         }
-
         public void Put(int key, int value)
         {
-            if (dic_ordered.Contains(key))
-                dic_ordered.Remove(key);
-            if (dic_ordered.Count == cap)
-                dic_ordered.RemoveAt(0);
-            
-            dic_ordered.Add(key, value);
+            if (!dic.ContainsKey(key))
+            {
+                dic.Add(key, new CachePair<int, int>(key,value));
+                cachedlst.AddFirst(dic[key]);
+            }
+            else
+            {
+                dic[key].Second = value;
+                cachedlst.Remove(dic[key]);
+                cachedlst.AddFirst(dic[key]);
+            }
+            if(dic.Count>capacity)
+            {
+                dic.Remove(cachedlst.Last.Value.First);
+                cachedlst.RemoveLast();
+            }
         }
     }
 

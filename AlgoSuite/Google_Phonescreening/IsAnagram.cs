@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/valid-anagram/
+    /// <ID>1242</ID>
+    /// </summary>
     class IsAnagramC
     {
         public bool IsAnagram(string s, string t)

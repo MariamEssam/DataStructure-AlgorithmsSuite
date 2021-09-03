@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/string-to-integer-atoi/
+    /// <ID>1008</ID>
+    /// </summary>
     class StringToInt
     {
         public int MyAtoi(string str)

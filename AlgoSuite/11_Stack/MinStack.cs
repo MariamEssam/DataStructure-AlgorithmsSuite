@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/min-stack/
+    /// <ID>1155</ID>
+    /// </summary>
     public class MinStack
     {
         Stack<int> min;

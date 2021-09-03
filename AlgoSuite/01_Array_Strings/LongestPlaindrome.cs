@@ -1,51 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/longest-palindromic-substring/
+    /// <ID>1005</ID>
+    /// </summary>
     class LongestPlaindromeC
     {
+
         public string LongestPalindrome(string s)
         {
-            if (s.Length == 0)
-                return s;
-            int maxlength = 1;
-            int startIndex = 0;
-            string longestplaindromestr = s[0].ToString();
-            
-            for(int i=0;i<s.Length-1;i++)
+            int start = 0, length = 1;
+
+            for (int i = 0; i < s.Length; i++)
             {
-                
-                int tup1 = getlength(i - 1, i + 1,s);
-                int tup2 = getlength(i, i + 1, s);
-                if(tup1>tup2&&tup1>maxlength)
+                int len1 = getlength(i, i + 1, s);
+                int len2 = getlength(i - 1, i + 1, s) + 1;
+                int len = Math.Max(len1, len2);
+                if (len > length)
                 {
-                    maxlength = tup1;
-                    startIndex = i-(maxlength)/2;
+                    start = i - (len - 1) / 2;
+                    length = len;
                 }
-                else if(tup2>tup1&&tup2>maxlength)
-                {
-                    maxlength = tup2;
-                    startIndex = i-(maxlength-1)/2;
-                }
-                
             }
-            return s.Substring(startIndex,maxlength);
+            return s.Substring(start, length);
         }
-        int getlength(int ptr1,int ptr2,string s)
+        int getlength(int ptr1, int ptr2, string s)
         {
-            int maxlength = 0;
-            if (ptr1 < 0 || ptr2 >= s.Length) return 0;
-            while (ptr1 >= 0 && ptr2 < s.Length && s[ptr1] == s[ptr2])
+            int length = 0;
+            while (ptr1 >= 0 && ptr2 < s.Length)
             {
-                maxlength = Math.Max(maxlength, ptr2 - ptr1 + 1);
-                ptr1--;
-                ptr2++;
+                if (s[ptr1--] != s[ptr2++]) break;
+                length++;
             }
-            return maxlength;
+            return 2 * length;
         }
     }
 }

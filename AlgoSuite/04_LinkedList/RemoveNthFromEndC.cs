@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+    /// <ID>1019</ID>
+    /// </summary>
     class RemoveNthFromEndC
     {
         public ListNode RemoveNthFromEnd(ListNode head, int n)

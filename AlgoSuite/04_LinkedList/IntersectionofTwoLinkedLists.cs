@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/intersection-of-two-linked-lists/
+    /// <ID>1160</ID>
+    /// </summary>
     class IntersectionofTwoLinkedLists
     {
         public ListNode GetIntersectionNode(ListNode headA, ListNode headB)

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/merge-sorted-array/
+    /// <ID>1088</ID>
+    /// </summary>
     class MergeSortedArray
     {
         public void Merge(int[] nums1, int m, int[] nums2, int n)

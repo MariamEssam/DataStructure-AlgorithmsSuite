@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgoSuite
 {
+    /// <summary>
+    /// https://leetcode.com/problems/group-anagrams/
+    /// <ID>1049</ID>
+    /// </summary>
     class GroupAnagramsC
     {
         public IList<IList<string>> GroupAnagrams(string[] strs)
